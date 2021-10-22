@@ -9,12 +9,21 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Search</a>
-      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Search</a>
+        </li>
+      <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <a class="nav-link" href="#">Log Out<span class="sr-only">(current)</span></a>
-    </form>
+    <% if user_signed_in? %>
+      <form class="form-inline my-2 my-lg-0">
+        <a class="nav-link" href="#">Log Out<span class="sr-only">(current)</span></a>
+      </form>
+    <% else %>
+      <form class="form-inline my-2 my-lg-0">
+        <a class="nav-link" href="/users/sign_in">Log in<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/users/sign_up">Sign up<span class="sr-only">(current)</span></a>
+      </form>
+    <% end %>
   </div>
 </nav>
