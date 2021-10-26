@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise for authentication
 gem 'devise'
 
+gem 'googlebooks'
+
 gem 'bootstrap', '~> 4.1.1'
 
 # Use Capistrano for deployment
