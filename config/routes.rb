@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resource :books do
     get "shelf"
     get "search"
+    post "search_results"
   end
 end
