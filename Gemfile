@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise for authentication
 gem 'devise'
 
+gem 'pry', '~> 0.13.1'
+
 gem 'googlebooks'
 
 gem 'bootstrap', '~> 4.1.1'
