@@ -37,6 +37,8 @@ gem 'pry', '~> 0.13.1'
 
 gem 'googlebooks'
 
+gem 'simple_form'
+
 gem 'bootstrap', '~> 4.1.1'
 
 # Use Capistrano for deployment
