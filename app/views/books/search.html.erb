@@ -1,0 +1,6 @@
+<div class="container">
+  <%= simple_form_for @book, :url => search_results_books_path do |f| %>
+    <%= f.input :title %>
+    <%= f.button :submit, 'Search', class: 'btn btn-secondary' %>
+  <% end %>
+</div>
