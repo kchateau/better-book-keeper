@@ -8,9 +8,37 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title"><%= book.title %></h5>
+              <h5 class="card-title"><%= book.title.truncate(30) %></h5>
               <p class="card-text"><%= book&.description&.truncate(100) %></p>
               <p class="card-text"><small class="text-muted">ISBN: <%= book&.isbn %></small></p>
+              <div style="display: flex;"
+                <%= button_to "Read",
+                   {
+                    :controller => :books,
+                    :action => "create",
+                    :title => book.title,
+                    :authors => book.authors,
+                    :isbn => book.isbn,
+                    :image_link => book.image_link,
+                    :status => "read"
+                  },
+                  :method => :post,
+                  class: "btn btn-secondary mr-1"
+                %>
+                <%= button_to "Want to read",
+                   {
+                    :controller => :books,
+                    :action => "create",
+                    :title => book.title,
+                    :authors => book.authors,
+                    :isbn => book.isbn,
+                    :image_link => book.image_link,
+                    :status => "want_to_read"
+                  },
+                  :method => :post,
+                  class: "btn btn-secondary"
+                  %>
+              </div>
             </div>
           </div>
         </div>
