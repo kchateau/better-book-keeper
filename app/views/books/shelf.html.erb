@@ -2,12 +2,14 @@
     read_books = UserRead.where(user: current_user, status: 'read').order("created_at DESC")
     want_to_read_books = UserRead.where(user: current_user, status: 'want_to_read')
   %>
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
 <div class="parent-container">
 <div class="container">
   <p class="text-center h1">
     Read
   </p>
-  <div class="row">
+  <div class="row border-right">
     <% if read_books %>
       <% read_books.each do |read| %>
         <% book = read.book %>
@@ -15,6 +17,9 @@
           <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
           <div class="hover-text">
             <div class="text">More Info</div>
+            <%= button_to books_path(:id => book.id), method: :delete do %>
+              <span class="iconify" data-icon="bi:trash-fill" style="color: #000F08; background-color: transparent; border: none;"></span>
+            <% end %>
           </div>
         </div>
       <% end %>

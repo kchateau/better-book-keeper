@@ -60,3 +60,14 @@ body {
 .parent-container {
   display: flex;
 }
+
+.border-right {
+  border-right: 3px solid #1C3738 !important;
+}
+
+.container {
+  button {
+    background: transparent;
+    border: none;
+ }
+}
