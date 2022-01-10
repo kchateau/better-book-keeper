@@ -1,7 +1,8 @@
 <%
-    read_books = UserRead.where(user: current_user, status: 'read')
+    read_books = UserRead.where(user: current_user, status: 'read').order("created_at DESC")
     want_to_read_books = UserRead.where(user: current_user, status: 'want_to_read')
-%>
+  %>
+<div class="parent-container">
 <div class="container">
   <p class="text-center h1">
     Read
@@ -38,4 +39,5 @@
       <% end %>
     <% end %>
   </div>
+</div>
 </div>
