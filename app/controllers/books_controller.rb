@@ -7,6 +7,10 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+  def more_info
+    @book = Book.find(params['id'])
+  end
+
   def search_results
     @books = GoogleBooks.search(book_params['title'], {:count => 10})
   end
@@ -27,6 +31,13 @@ class BooksController < ApplicationController
     book = Book.find_by(id: params['id'])
     UserRead.find_by(user: current_user, book: book).destroy
     current_user.reload
+    redirect_to root_path
+  end
+
+  def update
+    book = Book.find(params['id'])
+    read = UserRead.find_by(user: current_user, book: book)
+    read.update(status: 'read')
     redirect_to root_path
   end
 
