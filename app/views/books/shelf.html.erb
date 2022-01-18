@@ -17,9 +17,8 @@
           <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
           <div class="hover-text">
             <%= link_to "More Info", more_info_books_path(:id => book.id), :method => :get, :style => 'color:white;' %>
-            <div class="text">More Info</div>
             <%= button_to books_path(:id => book.id), method: :delete do %>
-              <span class="iconify" data-icon="bi:trash-fill" style="color: #000F08; background-color: transparent; border: none;"></span>
+              <span class="iconify" data-icon="bi:trash-fill" style="color: #000F08; background-color: transparent; border: none;" data-width="35" data-height="35"></span>
             <% end %>
           </div>
         </div>
