@@ -13,10 +13,11 @@
  *= require_tree .
  *= require_self
  */
-$primary: #1C3738;
+$primary: #390099;
 $secondary: #4d4847;
 
 @import 'bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Epilogue');
 
 img {
   opacity: 1;
@@ -54,7 +55,8 @@ img {
 }
 
 body {
-  background-color: #8baaad;
+  background-color: #9E0059 !important;
+  font-family: 'Epilogue' !important;
 }
 
 .parent-container {
@@ -67,6 +69,7 @@ body {
 
 .container {
   padding-top: 10px;
+  color: #FFBD00;
 
   button {
     background: transparent;
