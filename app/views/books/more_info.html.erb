@@ -1,9 +1,21 @@
-<div class="text-center container">
-  <p class="h1">
-    <%= @book.title %>
-  </p>
+<% read = UserRead.find_by(book: @book, user: current_user) %>
 
-  <p class="">
-    <%= @book.description %>
-  </p>
+<div class="row align-items-start">
+  <div class="col-1">
+    <img src="<%= @book&.image_link %>" class="img-fluid rounded-start" alt="..." style="">
+  </div>
+  <div class="col-6">
+    <div class="container">
+      <p class="h1">
+      <%= @book.title %> ( <%= read.status %> )
+      </p>
+
+      <p class="h6">
+        <%= @book.isbn %>
+      </p>
+      <p class="h5">
+        <%= @book.description %>
+      </p>
+    </div>
+  </div>
 </div>
