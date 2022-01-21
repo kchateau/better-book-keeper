@@ -5,50 +5,50 @@
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
 <div class="parent-container">
-<div class="container">
-  <p class="text-center h1">
-    Read
-  </p>
-  <div class="row border-right">
-    <% if read_books %>
-      <% read_books.each do |read| %>
-        <% book = read.book %>
-        <div class="m-3 test" style="position: relative;">
-          <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
-          <div class="hover-text">
-            <%= link_to "More Info", more_info_books_path(:id => book.id), :method => :get, :style => 'color:white;' %>
-            <%= button_to books_path(:id => book.id), method: :delete do %>
-              <span class="iconify" data-icon="bi:trash-fill" style="color: #000F08; background-color: transparent; border: none;" data-width="35" data-height="35"></span>
-            <% end %>
+  <div class="container">
+    <p class="text-center h1">
+      Read
+    </p>
+    <div class="row border-right">
+      <% if read_books %>
+        <% read_books.each do |read| %>
+          <% book = read.book %>
+          <div class="m-3 test">
+            <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
+            <div class="hover-text">
+              <%= link_to "More Info", more_info_books_path(:id => book.id), :method => :get %>
+              <%= button_to books_path(:id => book.id), method: :delete do %>
+                <span class="iconify" data-icon="bi:trash-fill" style="color: #FFBD00; background-color: transparent; border: none;" data-width="35" data-height="35"></span>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
 
-<div class="container">
-  <p class="text-center h1">
-    Want to Read
-  </p>
-  <div class="row">
-    <% if want_to_read_books %>
-      <% want_to_read_books.each do |read| %>
-        <% book = read.book %>
-        <div class="m-3 test" style="position: relative;">
-          <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
-          <div class="hover-text">
-            <div class="text">More Info</div>
-            <%= button_to books_path(:id => book.id), method: :delete do %>
-              <span class="iconify" data-icon="bi:trash-fill" style="color: #000F08; background-color: transparent; border: none;" data-width="35" data-height="35"></span>
-            <% end %>
-            <%= button_to books_path(:id => book.id), method: :patch do %>
-              <span class="iconify" data-icon="eva:checkmark-circle-2-outline" data-width="40" data-height="40"></span>
-            <% end %>
+  <div class="container">
+    <p class="text-center h1">
+      Want to Read
+    </p>
+    <div class="row">
+      <% if want_to_read_books %>
+        <% want_to_read_books.each do |read| %>
+          <% book = read.book %>
+          <div class="m-3 test" style="position: relative;">
+            <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
+            <div class="hover-text">
+              <%= link_to "More Info", more_info_books_path(:id => book.id), :method => :get %>
+              <%= button_to books_path(:id => book.id), method: :delete do %>
+                <span class="iconify" data-icon="bi:trash-fill" style="color: #FFBD00; background-color: transparent; border: none;" data-width="35" data-height="35"></span>
+              <% end %>
+              <%= button_to books_path(:id => book.id), method: :patch do %>
+                <span class="iconify" data-icon="eva:checkmark-circle-2-outline" data-width="40" data-height="40"></span>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
 </div>

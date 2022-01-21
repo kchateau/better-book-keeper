@@ -39,6 +39,15 @@ img {
   text-align: center;
   height: 100%;
   width: 100%;
+  padding-top: 50%;
+
+  a {
+    color: white;
+  }
+}
+
+.test {
+  position: relative;
 }
 
 .test:hover img {
@@ -61,6 +70,7 @@ body {
 
 .parent-container {
   display: flex;
+  font-family: "Epilogue";
 }
 
 .border-right {
