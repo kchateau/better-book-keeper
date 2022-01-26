@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>Search book by title</h2>
+  <div class="text-container">
+    <h2>Search book by title</h2>
+  </div>
+
   <%= simple_form_for @book, :url => search_results_books_path do |f| %>
     <%= f.input :title, input_html: { class: 'search-input' }, label_html: { class: 'search-label' } %>
     <%= f.button :submit, 'Search', class: 'search-btn btn btn-secondary' %>
