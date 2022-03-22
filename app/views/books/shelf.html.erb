@@ -1,7 +1,3 @@
-<%
-    read_books = UserRead.where(user: current_user, status: 'read').order("created_at DESC")
-    want_to_read_books = UserRead.where(user: current_user, status: 'want_to_read')
-  %>
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
 <div class="parent-container">
@@ -10,8 +6,8 @@
       Read
     </p>
     <div class="row border-right">
-      <% if read_books %>
-        <% read_books.each do |read| %>
+      <% if @read_books %>
+        <% @read_books.each do |read| %>
           <% book = read.book %>
           <div class="m-3 test">
             <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
@@ -32,8 +28,8 @@
       Want to Read
     </p>
     <div class="row">
-      <% if want_to_read_books %>
-        <% want_to_read_books.each do |read| %>
+      <% if @want_to_read_books %>
+        <% @want_to_read_books.each do |read| %>
           <% book = read.book %>
           <div class="m-3 test" style="position: relative;">
             <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
