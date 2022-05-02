@@ -10,7 +10,7 @@
         <% @read_books.each do |read| %>
           <% book = read.book %>
           <div class="m-3 test">
-            <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; object-fit: cover;">
+            <img src="<%= book&.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; width: 6.5vw; object-fit: cover;">
             <div class="hover-text">
               <%= link_to "More Info", more_info_books_path(:id => book.id), :method => :get %>
               <%= button_to books_path(:id => book.id), method: :delete do %>

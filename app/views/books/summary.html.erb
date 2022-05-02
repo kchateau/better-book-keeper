@@ -1,0 +1,18 @@
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+<div class="parent-container">
+  <div class="container" style="display: flex; align-items: center;">
+    <div class="m-3 test">
+      <img src="<%= @most_recent_read.book.image_link %>" class="img-fluid rounded-start" alt="..." style="height: 10vw; width: 6.5vw; object-fit: cover;">
+    </div>
+    <p class="text-center h2">
+      Most Recent Read:  <%= @most_recent_read.book.title %>
+    </p>
+  </div>
+
+  <div class="container">
+    <p class="text-center h1">
+      Total books read: <%= @total_books_read %>
+    </p>
+  </div>
+</div>
