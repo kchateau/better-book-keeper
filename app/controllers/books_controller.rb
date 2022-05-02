@@ -4,6 +4,16 @@ class BooksController < ApplicationController
     @want_to_read_books = UserRead.where(user: current_user, status: 'want_to_read')
   end
 
+  def summary
+    @read_books = UserRead.where(user: current_user, status: 'read').order("created_at DESC")
+    @want_to_read_books = UserRead.where(user: current_user, status: 'want_to_read')
+
+
+    @most_recent_read = UserRead.where(user: current_user).last
+
+    @total_books_read = UserRead.where(user: current_user).count
+  end
+
   def search 
     @book = Book.new
   end
