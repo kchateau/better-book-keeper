@@ -35,6 +35,8 @@ gem 'devise'
 
 gem 'pry', '~> 0.13.1'
 
+gem "webpacker", "~> 3"
+
 gem 'googlebooks'
 
 gem 'simple_form'

@@ -7,10 +7,7 @@ class BooksController < ApplicationController
   def summary
     @read_books = UserRead.where(user: current_user, status: 'read').order("created_at DESC")
     @want_to_read_books = UserRead.where(user: current_user, status: 'want_to_read')
-
-
     @most_recent_read = UserRead.where(user: current_user).last
-
     @total_books_read = UserRead.where(user: current_user).count
   end
 
@@ -24,23 +21,6 @@ class BooksController < ApplicationController
 
   def search_results
     @books = GoogleBooks.search(book_params['title'], {:count => 10})
-  end
-
-  def create
-    authors = create_authors(params['authors'])
-
-    @book = Book.find_or_create_by(
-      title: params['title'],
-      isbn: params['isbn'],
-      description: params['description'],
-      image_link: params['image_link']
-    )
-
-    @book.update(authors: authors)
-
-    create_user_read(@book, staus: params['status'])
-
-    redirect_to root_path
   end
 
   #move to user read controller
